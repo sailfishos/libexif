@@ -1,0 +1,27 @@
+Name: libexif
+Summary: Library for extracting extra information from image files
+Version: 0.6.19
+Release: 1
+Group: System/Libraries
+License: LGPLv2+
+URL: http://libexif.sourceforge.net/
+Sources:
+    - http://downloads.sourceforge.net/project/libexif/libexif/%{version}/libexif-%{version}.tar.bz2
+    - libexif-docs.tar.gz
+Description: |
+    Most digital cameras produce EXIF files, which are JPEG files with
+    extra tags that contain information about the image. The EXIF library
+    allows you to parse an EXIF file and read the data from those tags.
+
+Configure: configure
+ConfigOptions:
+    - --disable-docs
+Builder: make
+LocaleName: libexif-12
+SubPackages:
+    - Name: devel
+      Summary: Files needed for libexif application development
+      Group: Development/Libraries
+      Description: |
+          The libexif-devel package contains the libraries and header files
+          for writing programs that use libexif.
