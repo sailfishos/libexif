@@ -1,3 +1,8 @@
+* Thu Jul 18 2013 Davide Bettio <davide.bettio@ispirata.com> - 0.6.21
+- Update to version 0.6.21 which includes security fixes (CVE-2012-2812,
+CVE-2012-2813, CVE-2012-2814, CVE-2012-2836, CVE-2012-2837, CVE-2012-2840,
+CVE-2012-2841 & CVE-2012-2845)
+
 * Thu Mar 15 2012 Marko Saukko <marko.saukko@gmail.com> - 0.6.20
 - Update to version 0.6.20
 - Added documents package.
