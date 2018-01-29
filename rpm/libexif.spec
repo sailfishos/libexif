@@ -7,6 +7,7 @@ License:    LGPLv2+
 URL:        https://github.com/libexif/libexif
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires: autoconf
+BuildRequires: gettext
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
