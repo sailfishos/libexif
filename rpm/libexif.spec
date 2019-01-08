@@ -25,13 +25,14 @@ Requires:   %{name} = %{version}-%{release}
 The libexif-devel package contains the libraries and header files
 for writing programs that use libexif.
 
-%package docs
-Summary:    Documentation files needed for libexif
-Group:      Development/Libraries
+%package doc
+Summary:    Documentation for %{name}
+Group:      Documentation
 Requires:   %{name} = %{version}-%{release}
+Obsoletes:  %{name}-docs
 
-%description docs
-Documentation files for libexif.
+%description doc
+%{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}/%{name}
@@ -39,7 +40,7 @@ Documentation files for libexif.
 %build
 autoreconf -v -f -i
 %configure --disable-static
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
@@ -49,24 +50,27 @@ iconv -f latin1 -t utf-8 < COPYING > COPYING.utf8; cp COPYING.utf8 COPYING
 iconv -f latin1 -t utf-8 < README > README.utf8; cp README.utf8 README
 %find_lang libexif-12
 
+rm %{buildroot}%{_docdir}/%{name}/ABOUT-NLS
+rm %{buildroot}%{_docdir}/%{name}/COPYING
+mv %{buildroot}%{_docdir}/%{name} %{buildroot}%{_docdir}/%{name}-%{version}
+install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
+        README NEWS
+
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files -f libexif-12.lang
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libexif.so.*
-
 
 %files devel
 %defattr(-,root,root,-)
-%doc README NEWS
 %{_includedir}/libexif
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/libexif.pc
 
-%files docs
+%files doc
 %defattr(-,root,root,-)
-%{_datadir}/doc/libexif/
-
+%{_docdir}/%{name}-%{version}
