@@ -15,7 +15,7 @@ CVE-2012-2841 & CVE-2012-2845)
 * Tue Feb 16 2010 Anas Nashif <anas.nashif@intel.com> - 0.6.19
 - Use spectacle
 
-* Thu Jan 14 2010 Bin Gao <bin.gao@intel.com> 0.6.19
+* Thu Jan 14 2010 Bin Gao <bin.gao@intel.com> - 0.6.19
 - Update to 0.6.19
 - Drop obsolete patches
 
@@ -102,4 +102,3 @@ CVE-2012-2841 & CVE-2012-2845)
 
 * Mon Dec 22 2003 Matt Wilson <msw@redhat.com> 
 - Initial build.
-
