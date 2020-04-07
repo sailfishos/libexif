@@ -2,7 +2,6 @@ Name:       libexif
 Summary:    Library for extracting extra information from image files
 Version:    0.6.21
 Release:    1
-Group:      System/Libraries
 License:    LGPLv2+
 URL:        https://github.com/libexif/libexif
 Source0:    %{name}-%{version}.tar.bz2
@@ -11,6 +10,8 @@ BuildRequires: gettext
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
+Patch0: 0001-fix-CVE-2019-9278.patch
+
 %description
 Most digital cameras produce EXIF files, which are JPEG files with
 extra tags that contain information about the image. The EXIF library
@@ -18,7 +19,6 @@ allows you to parse an EXIF file and read the data from those tags.
 
 %package devel
 Summary:    Files needed for libexif application development
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -27,7 +27,6 @@ for writing programs that use libexif.
 
 %package doc
 Summary:    Documentation for %{name}
-Group:      Documentation
 Requires:   %{name} = %{version}-%{release}
 Obsoletes:  %{name}-docs
 
@@ -35,7 +34,7 @@ Obsoletes:  %{name}-docs
 %{summary}.
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
 autoreconf -v -f -i
