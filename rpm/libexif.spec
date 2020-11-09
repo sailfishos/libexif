@@ -25,6 +25,7 @@ for writing programs that use libexif.
 
 %package doc
 Summary:    Documentation for %{name}
+BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 Obsoletes:  %{name}-docs
 
@@ -49,6 +50,9 @@ iconv -f latin1 -t utf-8 < README > README.utf8; cp README.utf8 README
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
+
+%check
+make check
 
 %files -f libexif-12.lang
 %defattr(-,root,root,-)
