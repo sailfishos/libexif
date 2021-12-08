@@ -1,3 +1,3 @@
 [submodule "libexif"]
 	path = libexif
-	url = https://git.sailfishos.org/mirror/libexif.git
+	url = https://github.com/sailfishos-mirror/libexif.git
