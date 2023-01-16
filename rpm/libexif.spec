@@ -1,6 +1,6 @@
 Name:       libexif
 Summary:    Library for extracting extra information from image files
-Version:    0.6.22.1
+Version:    0.6.24
 Release:    1
 License:    LGPLv2+
 URL:        https://libexif.github.io/
