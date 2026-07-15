@@ -1,6 +1,6 @@
 Name:       libexif
 Summary:    Library for extracting extra information from image files
-Version:    0.6.24
+Version:    0.6.26
 Release:    1
 License:    LGPLv2+
 URL:        https://libexif.github.io/
@@ -55,16 +55,13 @@ iconv -f latin1 -t utf-8 < README > README.utf8; cp README.utf8 README
 make check
 
 %files -f libexif-12.lang
-%defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libexif.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/libexif
 %{_libdir}/libexif.so
 %{_libdir}/pkgconfig/libexif.pc
 
 %files doc
-%defattr(-,root,root,-)
 %doc README NEWS ABOUT-NLS SECURITY.md
