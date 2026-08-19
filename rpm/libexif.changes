@@ -85,7 +85,7 @@ CVE-2012-2841 & CVE-2012-2845)
 * Wed Mar  2 2005 Matthias Clasen <mclasen@redhat.com> 
 - Rebuild with gcc4
 
-* Tue Nov  9 2004 Matthias Saou <matthias.saou@est.une.marmotte.net>
+* Wed Nov  9 2004 Matthias Saou <matthias.saou@est.une.marmotte.net>
 - Use %%find_lang macro.
 - Add %%doc files, including mandatory copy of the LGPL license.
 - Use %{?_smp_mflags}
